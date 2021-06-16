@@ -1,0 +1,7 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // For attribute-based access control, Check a boolean `admin` attribute
+    allow write: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+    allow read: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+}
