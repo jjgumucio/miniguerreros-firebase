@@ -19,6 +19,7 @@
   };
 
   firebase.initializeApp(firebaseConfig);
+
 </script>
 
 <main>
@@ -44,6 +45,19 @@
     <User let:user let:auth>
       Howdy 😀! User
       <em>{user.uid}</em>
+
+      <!-- <em
+        >{auth()
+          .getUser(user.uid)
+          .then((userDoc) => {
+            console.log(userDoc.customClaims);
+          })}</em
+      > -->
+      <!-- <ul>
+        {#each Object.keys(user) as userProp}
+          <li>{userProp} = {user[userProp]}</li>
+        {/each}
+      </ul> -->
 
       <button on:click={() => auth.signOut()}>Sign Out</button>
 

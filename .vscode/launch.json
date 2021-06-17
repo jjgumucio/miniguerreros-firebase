@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Launch Firefox against dev server",
+      "url": "http://localhost:5000",
+      "webRoot": "${workspaceFolder}",
+      "pathMappings": [
+        {
+          "url": "http://localhost:5000/src",
+          "path": "${workspaceFolder}/src"
+        }
+      ]
+    }
+  ]
+}
